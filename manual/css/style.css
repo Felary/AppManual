@@ -1,0 +1,77 @@
+
+
+nav {
+    float: left;
+    background: black;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+nav ul li 
+{
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#btn_enviar
+{
+    background-color: violet;
+    color:black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 5px 5px;    
+    margin: 5px 40px;    
+    width: 50%;    
+}
+
+#btn_restablecer
+{
+    background-color: violet;
+    color:black;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 5px 5px;    
+    margin: 5px 80px;    
+    width: 50%;    
+}
+
+input 
+{
+    width: 100%;
+    padding: 10px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+
+input[required]
+{
+    border-color: blue;
+    box-shadow: 0px 0px 5px blue;
+}
+
+input:invalid
+{
+    border-color: red;
+    box-shadow: 0px 0px 5px red;
+}
+
+input:valid
+{
+    border-color: green;
+    box-shadow: 0px 0px 5px green;
+}

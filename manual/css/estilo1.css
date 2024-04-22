@@ -1,0 +1,50 @@
+nav 
+{
+    float: left;
+    background-color: #000000;
+    width: 100%;
+}
+nav ul 
+{
+    list-style: none;
+    overflow: hidden; 
+}  
+nav ul li 
+{
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #fffefe;
+    text-decoration: none;
+ }
+ nav ul li:hover {
+    background: #eca023;
+  }
+
+  #colorBoton
+  {
+    background: #000000;
+    color: #eca023;
+  }
+
+  input
+  {
+    background: #f8f6f2;  
+  }
+  
+  input[required]{
+    border-color:blue;
+    box-shadow:0px 0px 5px blue;
+  }
+  input:invalid{
+    border-color:red;
+    box-shadow:0px 0px 5px blue;
+  }
+  input:valid{
+      border-color:green;
+      box-shadow:0px 0px 5px green;
+  }
