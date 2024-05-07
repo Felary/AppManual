@@ -1,3 +1,16 @@
+
+<?php
+session_start();
+if(!isset($_SESSION['nombre'])){
+    header("Location: login.php");
+}
+?>
+<?php
+session_start();
+if(isset($_GET["nombre"])){
+$_SESSION['nombre']=$_GET['nombre'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,19 +31,18 @@
     include_once 'menu.html'
     ?>
     <section>
-        <h1 class="Estilo1"> Manual de PHP </h1>
-        <div data-md="61" lang="es-CO">
-          <div data-attrid="wa:/description" aria-level="3" role="heading" data-hveid="CBYQAA"><span lang="es">PHP (acrónimo recursivo de PHP: Hypertext Preprocessor ) es un <strong>lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web y que puede ser incrustado en HTML</strong>.</span></div>
-        </div>
+    <?php
+        echo "<h2>Bienvenido".$_SESSION['nombre']."</h2>";
+    ?>
+        <h1> Manual de PHP </h1>
+        <p> PHP (acrónimo recursivo de PHP: Hypertext Preprocessor ) es un <strong>lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web y que puede ser incrustado en HTML</strong>
         <div>
         <h2>¿Para qué sirve PHP en programación?</h2>
         <p>PHP es un lenguaje versátil que se utiliza en una amplia gama de aplicaciones en la programación PHP. ¿Qué significa que sea un lenguaje de código abierto? Un lenguaje de código abierto permite ser modificado por desarrolladores y se adapta a diversos proyectos. Esto demuestra la importancia de entender qué es PHP en programación.</p>
-        <p>Como ya hemos mencionado anteriormente, el lenguaje PHP permite incrustar HTML y para ello, no es necesario usar muchos comandos para que se muestre el HTML. </p>
-        <p>A continuación, te mostramos una lista de todo lo que puedes hacer con PHP, así como sus ventajas y desventajas.</p>
-        <p>&nbsp;</p>
-        <p><br>
+        <p>Como ya hemos mencionado anteriormente, el lenguaje PHP permite incrustar HTML y para ello, no es necesario usar muchos comandos para que se muestre el HTML. <br>
+        A continuación, te mostramos una lista de todo lo que puedes hacer con PHP, así como sus ventajas y desventajas.</p>
         </p>
-        <h3>Ventajas del PHP</h3>
+        <h2>Ventajas del PHP</h2>
         <ul>
           <li aria-level="1"><strong>Lenguaje libre,</strong> el cual puede  ser editado fácilmente por cualquier desarrollador o programador.</li>
           <li aria-level="1">Dispone de una <strong>sintaxis muy limpia</strong>, por lo que la curva de aprendizaje es menor que otros lenguajes de programación.</li>

@@ -48,3 +48,34 @@ nav ul li a {
       border-color:green;
       box-shadow:0px 0px 5px green;
   }
+  
+  p {
+  font-family: arial, helvetica, roboto, "new times roman", lato;
+    margin: 20px;
+  }
+  
+  h1
+  {
+	  margin: 20px;
+	  color:#FF6600;
+  }
+  
+  h2
+  {
+	  margin: 20px;
+	  color:#000066;
+  }
+  h3
+  {
+	  margin: 20px;
+	  color:#66FF00;
+  }
+  
+  div
+  {
+  		margin: 10px;
+  	   background-color:#5fa6d7;
+	   font-weight: bold;
+	   color: #ffffff;
+	   padding: 2 2 2 2px;
+  }

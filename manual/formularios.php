@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['nombre'])){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +17,9 @@
     <header> <img src="imagenes/fondo.png" width="100%" height="180px"> </header>
     <?php
     include_once 'menu.html'
+    ?>
+     <?php
+        echo "<h2>Bienvenido".$_SESSION['nombre']."</h2>";
     ?>
     <section>
         <h1> Formularios con PHP </h1>
@@ -27,7 +36,7 @@
                 </tr>
                 <tr>
                     <th>Apellido</th>
-                    <td><input type="text" name=ape value="Cota" ></td>
+                    <td><input type="text" name=ape value="Maya" ></td>
                 </tr>
                 <tr>
                     <th>Login</th>
@@ -84,7 +93,7 @@
                             }
                             if($operacion =="*")
                             {
-                                $suma= $numero1 - $numero2; 
+                                $suma= $numero1 * $numero2; 
                             }
                             
                             echo $suma;                        

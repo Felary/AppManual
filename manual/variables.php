@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['nombre'])){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +26,9 @@
     <?php
     include_once 'menu.html'
     ?>
+     <?php
+        echo "<h2>Bienvenido".$_SESSION['nombre']."</h2>";
+    ?>
     <section>
         <h1>&nbsp;</h1>
         <h1>Variables en PHP </h1>
@@ -28,7 +37,7 @@
         <p>$nombre = &quot;Helena Nito del bosque&quot;;         </p>
         <p>
           <?php
-    $auxiliar = "AlqTomas LLamas";
+    $auxiliar = "Elkin Tomas Bravo";
     echo "Nombre $auxiliar";
     $auxiliar = 7;
     echo "Numero: $auxiliar";

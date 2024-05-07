@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['nombre'])){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,15 +24,18 @@
     <?php
     include_once 'menu.html'
     ?>
+     <?php
+        echo "<h2>Bienvenido".$_SESSION['nombre']."</h2>";
+    ?>
     <section>
         <h2 class="Estilo1" >CICLO</h2>
         <p align="left" class="Estilo3"><strong>Es una expresión del lenguaje que permite repetir una parte determinada del código</strong>. Iteration </p>
         <h1 align="center">Ciclos en PHP </h1>
-        <table width="454" border="5" align="center" cellpadding="5" cellspacing="5">
+        <table width="553" border="5" align="center" cellpadding="5" cellspacing="5">
           <tr>
-            <th width="110" bgcolor="#FF9900" scope="col">While</th>
-            <th width="90" bgcolor="#FF9900" scope="col">for</th>
-            <th width="111" bgcolor="#FF9900" scope="col">do while </th>
+            <th width="185" bgcolor="#FF9900" scope="col">While</th>
+            <th width="129" bgcolor="#FF9900" scope="col">for</th>
+            <th width="173" bgcolor="#FF9900" scope="col">do while </th>
           </tr>
           <tr>
             <td><?php 
@@ -60,7 +69,7 @@
 
 		?></td>
           </tr>
-        </table>
+      </table>
 		<form name="form1" method="post" action="ciclos.php">
 		  <table width="528" border="5" align="center" cellpadding="5" cellspacing="5">
             <tr>
@@ -92,6 +101,7 @@
       
       for($k=1; $k<=10 ;$k++)
       {
+	  	  
           echo "<tr> <td> $numero <td> * <td> $k <td>=   <td>". ($numero * $k)  ." </tr>";
       }
 
@@ -126,9 +136,9 @@
 		<p>
 		  <?php
 			echo "<table width=254 border=5 align=center cellpadding=3 cellspacing=3>";
-			echo "<tr> <th colspan=10bgcolor=#000000 > Los Primos </th> </tr>";
-			echo "<tr>";
-			for($numero=1;$numero<=100;$numero++)
+			echo "<tr> <th colspan=10 bgcolor=#000000 > <font color=white>Los Primos </font></th> </tr>";
+			echo "<tr> <td>1";
+			for($numero=2;$numero<=100;$numero++)
 			{
 				if (esPrimo($numero))
 					echo "<td bgcolor=#6FB313>". $numero;
@@ -157,6 +167,6 @@
 	    </p>
 		</span>
 		<p>&nbsp;</p>
-		</section>
+</section>
 </body>
 </html>

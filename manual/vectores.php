@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['nombre'])){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +32,9 @@
   <?php
   include_once 'menu.html'
     ?>
+  <?php
+  echo "<h2>Bienvenido" . $_SESSION['nombre'] . "</h2>";
+  ?>
   <section> </section>
   <footer></footer>
   </p>
@@ -39,13 +48,13 @@
 
   <p>
     <?php
-    $lista = array("Aquiles Tumbo Rico", "Sebastian Verdugo", "Elton Tito", "Soyla Rosa Espinoza", "Armando Hoyos");
+    $lista = array("Aquiles Tumbo Rico", "Sebastian Maya", "Elton Tito", "Soyla Rosa Espinoza", "Armando Hoyos");
 
 
 
     ?>
   </p>
-  <table width="372" border="5" cellspacing="5" cellpadding="5">
+  <table width="372" border="5" align="center" cellpadding="5" cellspacing="5">
     <tr>
       <th colspan="2" bordercolor="#FF6600" bgcolor="#FF9933" scope="col">Lista de nombres</th>
     </tr>
@@ -70,39 +79,38 @@
   <p>$equipo = array(portero=&gt;'Cech', defensa=&gt;'Terry', medio=&gt;'Lampard', delantero=&gt;'Torres');</p>
   <div id="crayon-660c6476a9489369388854-2">&nbsp;</div>
 
-  <?php
-  $equipo = array('portero' => 'Camilo Vargas', 'defensa' => 'Yerry Mina', 'medio' => 'James', 'delantero' => 'Luis Noches');
-
-  echo "<h3>Mi equipo la furia tamalera </h3><hr>";
-  foreach ($equipo as $posicion => $jugador) {
-    echo "El " . $posicion . " es " . $jugador;
-    echo "<hr>";
-
-  }
-  ?>
-  <table width="372" border="5" cellspacing="5" cellpadding="5">
-    <tr>
-      <th colspan="2" bordercolor="#FF6600" bgcolor="#FF9933" scope="col">Liga Colombiana</th>
-    </tr>
-    <tr>
-      <th width="55" bgcolor="#000000"><span class="Estilo2">Puntaje</span></td>
-      <th width="268" bgcolor="#000000"><span class="Estilo2">Equipo</span></td>
-    </tr>
-
+  <p>
     <?php
-    $tablaColombia = array(35 => "Tolima", 32 => "Bucaramanga", 31 => "Santa fe", 30 => "Pereira", 29 => "Equidad");
-    $aux = 0;
-    foreach ($tablaColombia as $puntaje => $equipo) {
+    $equipo = array('portero' => 'Camilo Vargas', 'defensa' => 'Yerry Mina', 'medio' => 'James', 'delantero' => 'Luis Noches');
 
-      if ($aux % 2 == 0)
-        echo "<tr> <td>  $puntaje <td> $equipo ";
-      else
-        echo "<tr bgcolor=#afaba1> <td >  $puntaje <td> $equipo ";
-      $aux++;
+    echo "<h3>Mi equipo la furia tamalera </h3><hr>";
+    foreach ($equipo as $posicion => $jugador) {
+      echo "El " . $posicion . " es " . $jugador;
+      echo "<hr>";
+    }
+
+
+    ?>
+  </p>
+  <p>&nbsp;</p>
+  <table width="372" border="5" align="center" cellpadding="5" cellspacing="5">
+    <tr>
+      <th colspan="2" bordercolor="#FF6600" bgcolor="#FF9933" scope="col">Equipo: LA FURIA TAMALERA </th>
+    </tr>
+    <tr>
+      <th width="55" bgcolor="#000000"><span class="Estilo2">Posicion</span>
+        </td>
+      <th width="268" bgcolor="#000000"><span class="Estilo2">Nombre</span>
+        </td>
+    </tr>
+    <?php
+    foreach ($equipo as $posicion => $jugador) {
+      echo "<tr> <th>" . $posicion . " <td> " . $jugador;
     }
 
     ?>
   </table>
-  <br>
+  <p><br>
+  </p>
   <p>&nbsp; </p>
 </body>

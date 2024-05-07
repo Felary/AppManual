@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['nombre'])){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +17,9 @@
     <header> <img src="imagenes/fondo.png" width="100%" height="180px"> </header>
     <?php
     include_once 'menu.html'
+    ?>
+     <?php
+        echo "<h2>Bienvenido".$_SESSION['nombre']."</h2>";
     ?>
     <section>
         <h1> Condiciones if y switch </h1>
@@ -42,11 +51,11 @@
 				$numero = $_POST['numero'];
 			if ($numero%2 ==0)
 			{
-				echo "<center><font color=red >  Es paraco </font> </center>";
+				echo "<center><font color=red >  El numero es par </font> </center>";
 			}
 			else
 			{
-				echo "<center> <font color=blue >  No es paraco </font> </center>";
+				echo "<center> <font color=blue >  No es par </font> </center>";
 			}
 		}	
 			
